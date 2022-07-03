@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Opsi Pembayaran</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="action-bar bordered">
+    <div class="container-fluid p-16">
+      <div class="row">
+        <div class="col">
+          <a href="#">
+            <img src="assets/img/ic-arrow-back@2x.png" class="icon-back" alt="">
+          </a>
+        </div>
+        <div class="col-8 text-center">
+          <span class="title-bar">Opsi Pembayaran</span>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </div>
+  <div class="empty-state d-none">
+    <img src="assets/img/logo-fello@2x.png" class="empty-image" alt="empty image" />
+    <div class="empty-info">
+      <h1>Belum Ada Opsi Pembayaran</h1>
+      <p>Tambahkan pembayaran Anda agar dapat melakukan
+        transaksi</p>
+    </div>
+  </div>
+  <div class="content pt-8">
+    <ul class="skeleton-list"></ul>
+    <ul id="data" class="data-list"></ul>
+    <ul id="vendor" class="data-list"></ul>
+  </div>
+  <div class="bottom-bar bottom-bar d-flex align-items-center justify-content-center py-12 px-16">
+    <div class="d-grid w-100">
+      <a href="tambah-pembayaran.html" class="btn btn-primary btn-block text-uppercase rounded-pill d-flex flex-column align-items-center justify-content-center">
+        Tambah Pembayaran
+      </a>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/index.js"></script>
+</body>
+</html>
