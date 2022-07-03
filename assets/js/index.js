@@ -141,6 +141,7 @@ const getData = () => {
     error: function(xhr, textStatus, errorThrown) {
       console.log(xhr, textStatus, errorThrown);
       showSkeleton(false);
+      $(".empty-state").removeClass("d-none");
     }
   });
 }
