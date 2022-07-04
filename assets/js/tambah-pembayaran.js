@@ -38,6 +38,8 @@ $(document).ready(function() {
       cache: false,
       success: function (res) {
         if (res.status) {
+          setDataStorage("dataLength", parseInt(dataLength) + 1);
+          setDataStorage("vendorsLength", parseInt(vendorsLength) - 1);
           setTimeout(() => {
             window.location.href = "index.html";
           }, 2000);
@@ -148,41 +150,6 @@ const getVendors = () => {
     error: function(xhr, textStatus, errorThrown) {
       console.log(xhr, textStatus, errorThrown);
       showSkeleton({ status: false });
-    }
-  });
-}
-
-const connectPayment = (param) => {
-  const ranBalance = Math.floor(Math.random() * 100000);
-  const data = {
-    "user": userId,
-    "vendor": param,
-    "balance": formatRupiah(ranBalance)
-  };
-
-  showSkeleton({ status: true });
-
-  $.ajax({
-    type: "POST",
-    dataType: "json",
-    data: data,
-    url: baseUrl + "/connected",
-    crossOrigin: true,
-    cache: false,
-    success: function (res) {
-      if (res.status) {
-        setDataStorage("dataLength", dataLength + 1);
-        showSkeleton({ status: false });
-        return true;
-      } else {
-        showSkeleton({ status: false });
-        return false;
-      }
-    },
-    error: function(xhr, textStatus, errorThrown) {
-      console.log(xhr, textStatus, errorThrown);
-      showSkeleton({ status: true });
-      return false;
     }
   });
 }

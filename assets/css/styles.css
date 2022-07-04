@@ -148,6 +148,9 @@ body {
   margin-right: 8px;
 }
 
+.bottom-bar.d-none {
+  display: none;
+}
 .bottom-bar .btn {
   background-color: #003478;
   border: none;

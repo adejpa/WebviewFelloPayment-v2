@@ -155,8 +155,15 @@ const getVendors = () => {
     cache: false,
     success: function (res) {
       const { data } = res;
-
-      setDataStorage("vendorsLength", data.length);
+      
+      if (res.status) {
+        if (data.length > 0) {
+          setTimeout(() => {
+            $(".bottom-bar").removeClass("d-none");
+          }, 2000);
+        }
+        setDataStorage("vendorsLength", data.length);
+      }
     },
     error: function(xhr, textStatus, errorThrown) {
       console.log(xhr, textStatus, errorThrown);
